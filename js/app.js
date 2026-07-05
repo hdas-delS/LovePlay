@@ -34,7 +34,7 @@ window.App = (() => {
 
         } catch (error) {
             console.error(error);
-            UI.showNotification("Error al iniciar LovePlay");
+            UI.showNotification("Erro=: "+error.message);
         }
     }
 
