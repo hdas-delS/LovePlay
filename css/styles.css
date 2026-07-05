@@ -1,0 +1,368 @@
+/* ==========================================================
+LOVEPLAY v0.1-alpha
+styles.css
+========================================================== */
+
+:root {
+  --bg-primary: #111111;
+  --bg-secondary: #1A1A1A;
+  --bg-tertiary: #262626;
+  --text-primary: #FFFFFF;
+  --text-secondary: #B5B5B5;
+  --pink: #FF4FA3;
+  --purple: #8B5CF6;
+  --success: #34D399;
+  --danger: #EF4444;
+  --radius: 16px;
+  --shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: Inter, "Segoe UI", sans-serif;
+}
+
+#app {
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.screen {
+  display: none;
+}
+
+.active-screen {
+  display: block;
+}
+
+.card {
+  background: var(--bg-secondary);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.access-card {
+  max-width: 420px;
+  margin: 80px auto;
+}
+
+.access-card h1 {
+  margin-bottom: 12px;
+}
+
+.access-card p {
+  margin-bottom: 20px;
+  color: var(--text-secondary);
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--bg-tertiary);
+  color: white;
+}
+
+.button {
+  border: none;
+  cursor: pointer;
+  padding: 12px 20px;
+  border-radius: 12px;
+  transition: 0.2s;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.primary-button {
+  background: linear-gradient(135deg, var(--pink), var(--purple));
+  color: white;
+}
+
+.secondary-button {
+  background: var(--bg-tertiary);
+  color: white;
+}
+
+.identity-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.room-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#room-status {
+  color: var(--text-secondary);
+  margin-top: 6px;
+}
+
+.panel {
+  margin-bottom: 20px;
+}
+
+.users-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.user-item {
+  padding: 12px;
+  border-radius: 12px;
+  background: var(--bg-tertiary);
+}
+
+.activity-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 180px;
+  overflow-y: auto;
+  margin-top: 12px;
+}
+
+.activity-item {
+  background: var(--bg-tertiary);
+  border-radius: 12px;
+  padding: 10px 12px;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.scoreboard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.score-card {
+  background: var(--bg-tertiary);
+  border-radius: 14px;
+  padding: 12px;
+  text-align: center;
+}
+
+.score-label {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.score-value {
+  display: block;
+  margin-top: 6px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.game-status {
+  margin-bottom: 16px;
+  padding: 14px;
+  border-radius: 16px;
+  text-align: center;
+  font-weight: 600;
+  background: linear-gradient(135deg, rgba(255,79,163,0.15), rgba(139,92,246,0.15));
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.chat-panel {
+  position: sticky;
+  bottom: 0;
+}
+
+.chat-card {
+  margin-top: 20px;
+}
+
+.chat-messages {
+  height: 280px;
+  overflow-y: auto;
+  background: var(--bg-tertiary);
+  border-radius: 12px;
+  padding: 12px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.message {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.message-own {
+  background: rgba(255,79,163,0.15);
+}
+
+.message-other {
+  background: rgba(139,92,246,0.15);
+}
+
+.message-system {
+  background: rgba(255,255,255,0.05);
+  text-align: center;
+}
+
+.chat-input-area {
+  display: flex;
+  gap: 10px;
+}
+
+.chat-input-area input {
+  flex: 1;
+}
+
+/* ==========================================================
+TIC TAC TOE
+========================================================== */
+
+.ttt-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.ttt-cell {
+  aspect-ratio: 1;
+  border: none;
+  border-radius: 16px;
+  background: var(--bg-tertiary);
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.ttt-cell:hover {
+  transform: scale(1.03);
+}
+
+.ttt-controls {
+  display: flex;
+  justify-content: center;
+}
+
+/* ==========================================================
+MEMORAMA (agregado — faltaba en el original)
+========================================================== */
+
+.memory-board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.memory-card {
+  aspect-ratio: 1;
+  border: none;
+  border-radius: 12px;
+  background: var(--bg-tertiary);
+  color: white;
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.memory-card:hover {
+  transform: scale(1.03);
+}
+
+.memory-score {
+  display: flex;
+  justify-content: space-around;
+  background: var(--bg-tertiary);
+  border-radius: 12px;
+  padding: 10px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+/* ==========================================================
+NOTIFICACIONES
+========================================================== */
+
+#notifications {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.notification {
+  background: var(--bg-secondary);
+  padding: 12px 16px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  border-left: 4px solid var(--pink);
+}
+
+/* ==========================================================
+RESPONSIVE
+========================================================== */
+
+@media (max-width: 768px) {
+  #app {
+    padding: 12px;
+  }
+  .room-header {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .identity-buttons {
+    flex-direction: column;
+  }
+  .chat-input-area {
+    flex-direction: column;
+  }
+  .scoreboard {
+    grid-template-columns: 1fr;
+  }
+  .game-header {
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+  }
+}
