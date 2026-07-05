@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LovePlay ❤️💜</title>
+<meta name="theme-color" content="#111111">
+<meta name="description" content="LovePlay - Juegos y chat privado para dos.">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div id="notifications"></div>
+
+<div id="app">
+
+    <section id="screen-access" class="screen active-screen">
+        <div class="card access-card">
+            <h1>❤️ LovePlay 💜</h1>
+            <p>Tu espacio privado para jugar y conversar.</p>
+            <form id="access-form">
+                <div class="form-group">
+                    <label for="access-password">Contraseña</label>
+                    <input id="access-password" type="password" placeholder="Ingresa la contraseña">
+                </div>
+                <button type="submit" class="button primary-button">Entrar</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="screen-identity" class="screen">
+        <div class="card">
+            <h2>Selecciona tu identidad</h2>
+            <div class="identity-buttons">
+                <button id="btn-novio" class="button primary-button">❤️ Novio</button>
+                <button id="btn-novia" class="button secondary-button">💜 Novia</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="screen-room" class="screen">
+
+        <header class="room-header card">
+            <div>
+                <h1>❤️ LovePlay 💜</h1>
+                <p id="room-status">Sala activa</p>
+            </div>
+            <div>
+                <button id="btn-leave-room" class="button secondary-button">Salir</button>
+            </div>
+        </header>
+
+        <section class="panel">
+            <div class="card">
+                <h2>📋 Actividad de Sala</h2>
+                <div id="activity-feed" class="activity-feed">
+                    <div class="activity-item">LovePlay iniciado ❤️</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="users-panel" class="panel">
+            <div class="card">
+                <h2>👥 Participantes</h2>
+                <div id="users-list" class="users-list"></div>
+            </div>
+        </section>
+
+        <section id="game-panel" class="panel">
+            <div class="card">
+                <div class="game-header">
+                    <h2>🎮 Juegos</h2>
+                    <select id="game-selector">
+                        <option value="tictactoe">Tres en Raya</option>
+                        <option value="memory">Memorama</option>
+                        <option value="connect4">Conecta 4</option>
+                        <option value="battleship">Hundir la Flota</option>
+                    </select>
+                </div>
+
+                <div id="scoreboard" class="scoreboard">
+                    <div class="score-card">
+                        <span class="score-label">❤️ Novio</span>
+                        <span id="score-novio" class="score-value">0</span>
+                    </div>
+                    <div class="score-card">
+                        <span class="score-label">🤝 Empates</span>
+                        <span id="score-draws" class="score-value">0</span>
+                    </div>
+                    <div class="score-card">
+                        <span class="score-label">💜 Novia</span>
+                        <span id="score-novia" class="score-value">0</span>
+                    </div>
+                </div>
+
+                <div id="game-status" class="game-status">❤️ Turno de Novio</div>
+
+                <div id="game-container"></div>
+            </div>
+        </section>
+
+        <section id="chat-panel" class="chat-panel">
+            <div class="card chat-card">
+                <h2>💬 Chat</h2>
+                <div id="chat-messages" class="chat-messages"></div>
+                <form id="chat-form" class="chat-input-area">
+                    <input id="chat-input" type="text" placeholder="Escribe un mensaje...">
+                    <button type="submit" class="button primary-button">Enviar</button>
+                </form>
+            </div>
+        </section>
+
+    </section>
+
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-database-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-auth-compat.js"></script>
+
+<script src="js/config/app-config.js"></script>
+<script src="js/config/firebase-config.js"></script>
+
+<script src="js/ui.js"></script>
+
+<script src="js/presence.js"></script>
+<script src="js/room.js"></script>
+
+<script src="js/crypto.js"></script>
+<script src="js/chat.js"></script>
+
+<script src="js/game-manager.js"></script>
+<script src="js/games/tictactoe.js"></script>
+<script src="js/games/memory.js"></script>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>
